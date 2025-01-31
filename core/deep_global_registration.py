@@ -249,7 +249,7 @@ class DeepGlobalRegistration:
       self.feat_timer.tic()
       fcgf_feats0 = self.fcgf_feature_extraction(feats0, coords0)
       fcgf_feats1 = self.fcgf_feature_extraction(feats1, coords1)
-      self.feat_timer.toc()
+      descriptor_time = self.feat_timer.toc()
 
       # Step 2: Coarse correspondences
       corres_idx0, corres_idx1 = self.fcgf_feature_matching(fcgf_feats0, fcgf_feats1)
@@ -321,4 +321,4 @@ class DeepGlobalRegistration:
           max_correspondence_distance=self.voxel_size * 2,
           init=T).transformation
 
-    return T
+    return T, descriptor_time

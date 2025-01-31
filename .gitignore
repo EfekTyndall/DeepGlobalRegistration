@@ -17,3 +17,5 @@ tmp.txt
 output.ply
 bunny.ply
 test.sh
+.vscode
+ResUNetBN2C-feat32-3dmatch-v0.05.pth
